@@ -5,12 +5,21 @@ services:
     restart: always
     env_file: ./.env
     environment:
-      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE=$MYSQL_DATABASE
-      - MYSQL_USER=$MYSQL_USER
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
-      - $MYSQL_DB_LOCAL_PORT:$MYSQL_DB_DOCKER_PORT
+      - "${MYSQL_DB_LOCAL_PORT}:${MYSQL_DB_DOCKER_PORT}"
     volumes:
       - ./db_data:/var/lib/mysql
+  app:
+    build: ./node
+    container_name: node_app
+    #restart: always
+    env_file: ./.env
+    ports:
+      - "${NODE_LOCAL_PORT}:${NODE_DOCKER_PORT}"
+    depends_on:
+      - db
 volumes:
   db_data:
