@@ -1,3 +1,5 @@
+# Realizando un cambio en el archivo README.md de la rama clase-03 para realizar un merge con la rama main
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
