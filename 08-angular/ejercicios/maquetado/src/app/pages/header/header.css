@@ -1,0 +1,39 @@
+header#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  padding: 2rem 3.9rem 1.7rem;
+  width: 100%;
+}
+
+ul.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu > li:hover,
+.header-menu > li > a:hover  {
+  cursor: pointer;
+  color: rgb(107, 83, 240);
+}
+
+a.active {
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+  padding: 0.9rem 2rem;
+}
+
+.icono-left {
+  margin-right: 20px;
+}
+
+.icono-right {
+  margin-right: 0;
+}
+
+.fa-brands {
+  font-size: 1.4rem;
+}

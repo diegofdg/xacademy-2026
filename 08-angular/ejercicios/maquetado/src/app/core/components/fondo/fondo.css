@@ -1,0 +1,8 @@
+.fondo-fundacion {
+  max-width: 100%;
+  height: calc(100vh-80px);
+  background-repeat: no-repeat;
+  position: fixed;
+  top: -25rem;
+  z-index: -1;
+}

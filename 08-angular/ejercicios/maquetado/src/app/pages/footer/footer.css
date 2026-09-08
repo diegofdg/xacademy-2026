@@ -1,0 +1,45 @@
+footer#footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding: 4rem 3.9rem;
+  background-color: #201b24;
+  color: white;
+}
+
+.footer-logo {
+  flex: 1.1;
+}
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.footer-texto {
+  padding: 0 7rem 0 3rem;
+  flex: 1.2;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+.footer-contenido > li {
+  margin-right: 0;
+  line-height: 2.1rem;
+}
+
+.footer-contenido > li:hover {
+  cursor: pointer;
+}
+
+.footer-contenido > li > p {
+  display: inline;
+  margin-left: 1rem;
+}

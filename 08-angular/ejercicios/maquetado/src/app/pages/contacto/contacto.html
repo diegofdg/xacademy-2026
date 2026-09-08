@@ -1,0 +1,59 @@
+<section class="contact-form">
+  <form [formGroup]="contactForm">
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input 
+        formControlName="email"
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        required
+      />
+      <div class="error">
+        @if (contactForm.controls['email'].errors?.['required'] && (contactForm.controls['asunto'].touched || contactForm.controls['asunto'].dirty)) {
+          <span>This is required</span>
+        }
+        @if (contactForm.controls['email'].errors?.['email']) {
+          <span>Email is not valid</span>
+        }
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="asunto">Asunto</label>
+      <input
+        formControlName="asunto"
+        type="text"
+        id="asunto"
+        name="asunto"
+        class="form-control"
+        required
+      />
+      <div class="error">
+        @if (contactForm.controls['asunto'].errors?.['required'] && (contactForm.controls['asunto'].touched || contactForm.controls['asunto'].dirty)) {
+          <span>This is required</span>
+        }
+        @if (contactForm.controls['asunto'].errors?.['minlength']) {
+          <span>Min 4 char needed</span>
+        }
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="mensaje">Mensaje</label>
+      <textarea
+        formControlName="mensaje"
+        id="mensaje"
+        name="mensaje"
+        class="form-control"
+        required
+        rows="8"
+      ></textarea>
+      <div class="error">
+        @if (contactForm.controls['asunto'].errors?.['required']&& (contactForm.controls['asunto'].touched || contactForm.controls['asunto'].dirty)) {
+          <span>This is required</span>
+        }
+      </div>
+    </div>
+    <button [disabled]="contactForm.invalid" type="submit" class="form-button" (click)="submitForm()">Enviar</button>
+  </form>
+</section>

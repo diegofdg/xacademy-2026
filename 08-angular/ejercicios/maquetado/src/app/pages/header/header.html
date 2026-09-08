@@ -1,0 +1,28 @@
+<header id="header">
+  <div>
+    <img src="img/logo.svg" />
+  </div>
+  <nav>
+    <ul class="header-menu">
+      @for (item of menu; track item.id) {
+        <li>
+          @if (item.mismaPagina) {
+            <a>
+              {{ item.titulo }}
+            </a>
+          } @else {
+            <a [routerLink]="[item.route]" routerLinkActive="active">
+              {{ item.titulo }}
+            </a>
+          }
+        </li>
+        <li></li>
+      }
+      <li>
+        <app-button [btnText]="'Sumate'" [btnIcon]="'fa-plus'"></app-button>
+      </li>
+      <li class="icono-left"><i class="fa-brands fa-instagram"></i></li>
+      <li class="icono-right"><i class="fa-brands fa-linkedin-in"></i></li>
+    </ul>
+  </nav>
+</header>

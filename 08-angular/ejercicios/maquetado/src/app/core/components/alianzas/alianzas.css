@@ -1,0 +1,23 @@
+section#alianzas {
+  background-color: #ffffff;
+  padding: 6rem 3.9rem;
+}
+
+section#alianzas > h2 {
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.alianzas-left > img {
+  max-width: 22.9rem;
+  border-radius: 0 30px 30px 30px;
+  filter: grayscale(100%);
+  opacity: 50%;
+}
+
+.alianzas-left > img:hover {
+  filter: grayscale(0%);
+  opacity: 100%;
+  cursor: pointer;
+}

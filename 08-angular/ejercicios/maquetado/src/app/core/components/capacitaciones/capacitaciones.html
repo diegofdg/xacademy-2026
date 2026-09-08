@@ -1,0 +1,50 @@
+<section id="capacitaciones">
+  <h2>. Capacitaciones</h2>
+  @for (item of listaCapacitaciones; track item.id) {
+    @if (item.posicionImagen == 'left') {
+      <div class="capacitaciones">
+        <div class="capacitaciones-left {{ item.posicionImagen }}">
+          <img src="{{ item.imagen }}" alt="imagen {{ item.titulo }}" />
+        </div>
+        <div class="capacitaciones-right">
+          <div class="capacitaciones-right-contenido">
+            @if (item.logo == null) {
+              <h2>{{ item.titulo }}</h2>
+            } @else {
+              <img src="{{ item.logo }}" alt="logo {{ item.titulo }}" />
+            }
+            <p>
+              {{ item.texto }}
+            </p>
+            <app-button
+              [btnText]="'Más Info'"
+              [btnIcon]="'fa-sharp fa-arrow-right-long'"
+            ></app-button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="capacitaciones">
+        <div class="capacitaciones-right">
+          <div class="capacitaciones-right-contenido">
+            @if (item.logo == null) {
+              <h2>{{ item.titulo }}</h2>
+            } @else {
+              <img src="{{ item.logo }}" alt="logo {{ item.titulo }}" />
+            }
+            <p>
+              {{ item.texto }}
+            </p>
+            <app-button
+              [btnText]="'Más Info'"
+              [btnIcon]="'fa-sharp fa-arrow-right-long'"
+            ></app-button>
+          </div>
+        </div>
+        <div class="capacitaciones-left {{ item.posicionImagen }}">
+          <img src="{{ item.imagen }}" alt="imagen {{ item.titulo }}" />
+        </div>
+      </div>
+    }
+  }
+</section>

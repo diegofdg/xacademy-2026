@@ -1,0 +1,29 @@
+button.redondo-red {
+  margin-left: 14px;
+  border: 2px solid rgb(240, 83, 83);
+}
+
+button.redondo-red:hover {
+  background-color: rgb(240, 83, 83);
+  color: #ffffff;
+}
+
+button.redondo-left {
+  margin-left: 14px;
+  border: 2px solid rgb(107, 83, 240);
+}
+
+button.redondo-left span,
+button.redondo-left i {
+  color: rgb(107, 83, 240);
+}
+
+button.redondo-left:hover {
+  background-color: rgb(107, 83, 240);
+  color: #ffffff;
+}
+
+button.redondo-left:hover span,
+button.redondo-left:hover i {
+  color: #ffffff;
+}

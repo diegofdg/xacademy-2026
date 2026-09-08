@@ -1,0 +1,15 @@
+<section id="equipo">
+  <h2>. Equipo</h2>
+  <div class="equipo">
+    @for (item of listaEquipo; track item.id) {
+      <div class="equipo-card">
+        <img src="{{ item.imagen }}" alt="Imagen {{ item.cargo }}" />
+        <div class="card">
+          <h5>{{ item.nombre }}</h5>
+          <p>{{ item.cargo }}</p>
+          <div class="icono-right"><i class="fa-brands fa-linkedin-in circular"></i></div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<section id="programas">
+  <h2>. Programas</h2>
+  @for (item of listaProgramas(); track $index) {
+    @if (item.posicionImagen == 'left') {
+      <div class="programas">
+        <div class="programas-left {{ item.posicionImagen }}">
+          <img src="{{ item.imagen }}" alt="imagen {{ item.titulo }}" />
+        </div>
+        <div class="programas-right">
+          <div class="programas-right-contenido">
+            <img src="{{ item.logo }}" alt="logo {{ item.titulo }}" />
+            <p>
+              {{ item.texto }}
+            </p>
+            <app-button
+              [btnText]="'Más Info'"
+              [btnIcon]="'fa-sharp fa-arrow-right-long'"
+            ></app-button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="programas">
+        <div class="programas-right">
+          <div class="programas-right-contenido">
+            @if (item.logo == null) {
+              <h2>{{ item.titulo }}</h2>
+            } @else {
+              <img src="{{ item.logo }}" alt="logo {{ item.titulo }}" />
+            }
+            <p>
+              {{ item.texto }}
+            </p>
+            <app-button
+              [btnText]="'Más Info'"
+              [btnIcon]="'fa-sharp fa-arrow-right-long'"
+            ></app-button>
+          </div>
+        </div>
+        <div class="programas-left {{ item.posicionImagen }}">
+          <img src="{{ item.imagen }}" alt="imagen {{ item.titulo }}" />
+        </div>
+      </div>
+    }
+  }
+  @if (mostrarBotones) {
+    <div>
+      <h2 style="margin: 20px 20px 20px;">. Botones para Prueba CRUD</h2>
+      <app-button [btnText]="'Agregar Programa'" [btnClass]="'redondo-red'" [btnIcon]="'fa-sharp fa-arrow-right-long'" (onBtnClick)="onAddFeature()"></app-button>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      <app-button [btnText]="'Modificar Programa'" [btnClass]="'redondo-red'" [btnIcon]="'fa-sharp fa-arrow-right-long'" (onBtnClick)="onEditFeature()"></app-button>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      <app-button [btnText]="'Eliminar Programa'" [btnClass]="'redondo-red'" [btnIcon]="'fa-sharp fa-arrow-right-long'" (onBtnClick)="onDeleteFeature()"></app-button>
+    </div>
+  }
+</section>
