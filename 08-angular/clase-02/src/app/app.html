@@ -1,0 +1,29 @@
+<div class="comparacion">
+  <div class="columna">
+    <h2>Angular 16</h2>
+    <h3>Contadores</h3>
+    <p>contador: {{ contadorAngular16 }}</p>
+  </div>
+
+  <div class="columna">
+    <h2>Angular 21</h2>
+
+    <h3>Contadores</h3>
+    <p>contador: {{ contador() }}</p>
+
+    <h3>Ciclo for en un array con signal</h3>
+    <button (click)="agregarNombre()">Agregar nombre</button>
+    @for(i of nombreArraySignal(); track $index){
+      <p>{{i}}</p>
+    }
+    
+    @if (estaGastonEnArray()) {
+      <p>Gastón está en Array</p>
+    } @else {
+      <p>Gastón no está en Array</p>
+    }
+  </div>
+
+</div>
+
+
