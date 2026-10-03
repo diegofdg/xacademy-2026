@@ -1,0 +1,33 @@
+.comparacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.columna {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.columna h2 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.columna h3 {
+  margin-top: 25px;
+}
+
+.columna img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .comparacion {
+    grid-template-columns: 1fr;
+  }
+}

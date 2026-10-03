@@ -1,0 +1,93 @@
+<div class="comparacion">
+  <div class="columna">
+    <h2>Angular 16</h2>
+    
+    <h3>Condicionales</h3>
+    <div *ngIf="condicion; else elseBlock">
+      <p>Condicion verdadera</p>
+    </div>
+    <ng-template #elseBlock>
+      <p>Condicion falsa</p>
+    </ng-template>
+
+    <h3>Bucle for</h3>
+    <div *ngFor="let i of array1; trackBy: trackByFn">
+      <p>{{ i }}</p>
+    </div>
+    <p>Cantidad de elementos: {{ array1.length }}</p>
+
+    <h3>Bucle switch</h3>
+    <div [ngSwitch]="color">
+      <div *ngSwitchCase="'red'">Color rojo</div>
+      <div *ngSwitchCase="'red'">Color rojo</div>
+      <div *ngSwitchCase="'blue'">Color azul</div>
+      <div *ngSwitchDefault>Color desconocido</div>
+    </div>
+  </div>
+
+  <div class="columna">
+    <h2>Angular 21</h2>
+
+    <h3>Condicionales</h3>
+    @if(condicion) {
+      <p>Condicion verdadera</p>
+    } @else {
+      <p>Condicion falsa</p>
+    }
+
+    <h3>Bucle for</h3>
+    @for (i of array2; track i.id) {
+      <p>{{i.name}}</p>
+    }
+
+    <h3>Bucle switch</h3>
+    @switch(color) {
+      @case('red') {
+        <div>Color rojo</div>
+      }
+      @case('red') {
+        <div>Color rojo</div>
+      }
+      @case('blue') {
+        <div>Color azul</div>
+      }
+      @default {
+        <div>Color desconocido</div>
+      }
+    }
+
+    <h3>Variables en bucle for</h3>
+    @for (i of array2; track $index) {
+      @let name = i.name[0] + i.lastName[0];
+      <p>{{name}}</p>
+    }
+
+    <h3>Array vacío en bucle for</h3>
+    @for (i of emptyArray; track $index) {
+      <p>{{i}}</p>
+    } @empty {
+      <p>No hay elementos</p>
+    }
+
+    <h3>defer on viewport</h3>
+    @defer (on viewport) {
+      <img src="https://static.wixstatic.com/media/ad324d_ff1f0eb21ca04503a0fbebd67d8f5a1d~mv2.png/v1/fill/w_97,h_27,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Technology%20with%20Purpose_color.png">
+    } @placeholder (minimum 5s) {
+      <p>Estoy cargando la imagen</p>
+    }
+
+    <h3>defer on hover</h3>
+    @defer (on hover) {
+      <img src="https://static.wixstatic.com/media/ad324d_ff1f0eb21ca04503a0fbebd67d8f5a1d~mv2.png/v1/fill/w_97,h_27,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Technology%20with%20Purpose_color.png">
+    } @placeholder {
+      <p>Pasa el puntero del mouse para ver la imagen</p>
+    }
+
+    <h3>defer on interaction</h3>
+    @defer (on interaction) {
+      <img src="https://static.wixstatic.com/media/ad324d_ff1f0eb21ca04503a0fbebd67d8f5a1d~mv2.png/v1/fill/w_97,h_27,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Technology%20with%20Purpose_color.png">
+    } @placeholder {
+      <p>Haz click para ver la imagen</p>
+    }
+  </div>
+</div>
